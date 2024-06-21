@@ -2,11 +2,14 @@ const express = require("express");
 
 const Product = require('./models/productModel')
 require("dotenv").config()
-
+const cors = require('cors')
 const db = require("./db")
 
 const app = express();
-
+app.use(cors({
+    origin:["https://lavazzamockup5.vercel.app/"],
+    methods:["POST","GET"],
+    credentials:true
 app.use(express.json());
 
 const productsRoute = require('./routes/productsRoute');
