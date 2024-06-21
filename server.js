@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
     origin:["https://lavazzamockup5.vercel.app/"],
     methods:["POST","GET"],
-    credentials:true
+    credentials:true}));
 app.use(express.json());
 
 const productsRoute = require('./routes/productsRoute');
